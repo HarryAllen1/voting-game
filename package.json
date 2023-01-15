@@ -40,5 +40,12 @@
 		"@vercel/analytics": "^0.1.8",
 		"firebase": "^9.15.0",
 		"qrcode": "^1.5.1"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"react"
+			]
+		}
 	}
 }
