@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
   '@unocss/reset': ^0.48.4
-  '@upstash/ratelimit': ^0.1.5
+  '@upstash/ratelimit': ^0.3.0
   '@upstash/redis': ^1.19.1
   '@vercel/analytics': ^0.1.8
   dotenv: ^16.0.3
@@ -33,7 +33,7 @@ specifiers:
 
 dependencies:
   '@unocss/reset': 0.48.4
-  '@upstash/ratelimit': 0.1.5_@upstash+redis@1.19.1
+  '@upstash/ratelimit': 0.3.1
   '@upstash/redis': 1.19.1
   '@vercel/analytics': 0.1.8
   dotenv: 16.0.3
@@ -1450,12 +1450,8 @@ packages:
       - rollup
     dev: true
 
-  /@upstash/ratelimit/0.1.5_@upstash+redis@1.19.1:
-    resolution: {integrity: sha512-v0zq3Xpq42HQBvXDvm0C4djYvKC5TjHG29uCpbIQcOw0znJNroHewI8y4Yk4tBeEF1rvj2RjDkFihjCp6uTExQ==}
-    peerDependencies:
-      '@upstash/redis': ^1.4.0
-    dependencies:
-      '@upstash/redis': 1.19.1
+  /@upstash/ratelimit/0.3.1:
+    resolution: {integrity: sha512-/GpiHDWWvd4J1Pp19bg9VqWBy3I8BEblXF8vijETv7Gkvtr4g/IaK0v/dcqOCoF8EJY7A7Un2mezBAnrYxdW8g==}
     dev: false
 
   /@upstash/redis/1.19.1:
