@@ -17,7 +17,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-vercel": "^1.0.2",
+		"@sveltejs/adapter-vercel": "^2.0.0",
 		"@sveltejs/kit": "^1.1.0",
 		"@types/express": "^4.17.15",
 		"@types/qrcode": "^1.5.0",

@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@sveltejs/adapter-vercel': ^1.0.2
+  '@sveltejs/adapter-vercel': ^2.0.0
   '@sveltejs/kit': ^1.1.0
   '@types/express': ^4.17.15
   '@types/qrcode': ^1.5.0
@@ -43,7 +43,7 @@ dependencies:
   socket.io: 4.5.4
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.2_@sveltejs+kit@1.1.0
+  '@sveltejs/adapter-vercel': 2.0.0_@sveltejs+kit@1.1.0
   '@sveltejs/kit': 1.1.0_svelte@3.55.1+vite@4.0.4
   '@types/express': 4.17.15
   '@types/qrcode': 1.5.0
@@ -993,10 +993,10 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: false
 
-  /@sveltejs/adapter-vercel/1.0.2_@sveltejs+kit@1.1.0:
-    resolution: {integrity: sha512-Ms2cTlqpA8Rf6Pl8GuqC6bLoMdA30W688+wV8i6DcHlLO3Z9NBEZET2jF+tEmRF1jrxxAWEDngdQBfs25eOBxw==}
+  /@sveltejs/adapter-vercel/2.0.0_@sveltejs+kit@1.1.0:
+    resolution: {integrity: sha512-tgZr7ggsPNOlWBc+y6vVHzU8WVkjIViMr3Y6l0B/0YoMR6YSq0bvEviyNnJ8m9UTFDU5nPpYARIhmlj1PHXjkQ==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0
+      '@sveltejs/kit': ^1.5.0
     dependencies:
       '@sveltejs/kit': 1.1.0_svelte@3.55.1+vite@4.0.4
       '@vercel/nft': 0.22.6
