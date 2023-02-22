@@ -7,7 +7,7 @@ specifiers:
   '@types/qrcode': ^1.5.0
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
-  '@unocss/reset': ^0.48.4
+  '@unocss/reset': ^0.50.0
   '@upstash/ratelimit': ^0.1.5
   '@upstash/redis': ^1.19.1
   '@vercel/analytics': ^0.1.8
@@ -32,7 +32,7 @@ specifiers:
   vitest: ^0.27.1
 
 dependencies:
-  '@unocss/reset': 0.48.4
+  '@unocss/reset': 0.50.0
   '@upstash/ratelimit': 0.1.5_@upstash+redis@1.19.1
   '@upstash/redis': 1.19.1
   '@vercel/analytics': 0.1.8
@@ -1400,6 +1400,11 @@ packages:
 
   /@unocss/reset/0.48.4:
     resolution: {integrity: sha512-9WPoGwLrG5vZQzMxgd7/zJkUUmL06WYtrAiRdf5gYsCBbnpx6eq0II0TvU8PEzvseqgkhEpN19iSgnsuTZ34kA==}
+    dev: true
+
+  /@unocss/reset/0.50.0:
+    resolution: {integrity: sha512-cU3YlVWvt9F1wW6X1/j5HXL/DQvod6bM+2sF7wvIuQyeLoiMM7z4Ne5VBwUX4Q0Tt9Chu295MqdQkK6elrDUYg==}
+    dev: false
 
   /@unocss/scope/0.48.4:
     resolution: {integrity: sha512-3GcEoTiEZWguui8n1CFjuKkdtnRegND+QkSUN3fEW62s515gpjwkuLbthea+dLT8+x0NUjoXglMN0Hsea0taTA==}
