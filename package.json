@@ -40,7 +40,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@unocss/reset": "^0.48.4",
+		"@unocss/reset": "^0.50.0",
 		"@upstash/ratelimit": "^0.1.5",
 		"@upstash/redis": "^1.19.1",
 		"@vercel/analytics": "^0.1.8",
