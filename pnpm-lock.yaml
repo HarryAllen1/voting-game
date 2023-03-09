@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
   '@unocss/reset': ^0.48.4
-  '@upstash/ratelimit': ^0.1.5
+  '@upstash/ratelimit': ^0.4.0
   '@upstash/redis': ^1.19.1
   '@vercel/analytics': ^0.1.8
   dotenv: ^16.0.3
@@ -33,7 +33,7 @@ specifiers:
 
 dependencies:
   '@unocss/reset': 0.48.4
-  '@upstash/ratelimit': 0.1.5_@upstash+redis@1.19.1
+  '@upstash/ratelimit': 0.4.0_@upstash+redis@1.19.1
   '@upstash/redis': 1.19.1
   '@vercel/analytics': 0.1.8
   dotenv: 16.0.3
@@ -1450,16 +1450,36 @@ packages:
       - rollup
     dev: true
 
-  /@upstash/ratelimit/0.1.5_@upstash+redis@1.19.1:
-    resolution: {integrity: sha512-v0zq3Xpq42HQBvXDvm0C4djYvKC5TjHG29uCpbIQcOw0znJNroHewI8y4Yk4tBeEF1rvj2RjDkFihjCp6uTExQ==}
-    peerDependencies:
-      '@upstash/redis': ^1.4.0
+  /@upstash/core-analytics/0.0.6:
+    resolution: {integrity: sha512-cpPSR0XJAJs4Ddz9nq3tINlPS5aLfWVCqhhtHnXt4p7qr5+/Znlt1Es736poB/9rnl1hAHrOsOvVj46NEXcVqA==}
+    engines: {node: '>=16.0.0'}
     dependencies:
+      '@upstash/redis': 1.20.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@upstash/ratelimit/0.4.0_@upstash+redis@1.19.1:
+    resolution: {integrity: sha512-727GI50EoK0PjSLZn4mHdFhZsdMWBb/HYm/vMqsYMdtKtC3hZW8NhN51IZqZWVqziLci2VEptZtTAK4AOmGIsg==}
+    peerDependencies:
+      '@upstash/redis': ^1.20.1
+    dependencies:
+      '@upstash/core-analytics': 0.0.6
       '@upstash/redis': 1.19.1
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /@upstash/redis/1.19.1:
     resolution: {integrity: sha512-oH621FYa8wEnBXWXabNssiKrpITK/x0grpisn2WaIvukH3oij+lB41B9uEGUzYS93RfQvGAsgEb23FYremqgZA==}
+    dependencies:
+      isomorphic-fetch: 3.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@upstash/redis/1.20.1:
+    resolution: {integrity: sha512-mYwV8uvQROJnq5aOxmQH3KDa0E8+DRdU0zJ/VGQV84HrhQQNy0IsLFFTo97WEhZAlHcJnVbrbwqUK9disWqx/w==}
     dependencies:
       isomorphic-fetch: 3.0.0
     transitivePeerDependencies:

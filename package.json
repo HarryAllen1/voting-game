@@ -41,7 +41,7 @@
 	"type": "module",
 	"dependencies": {
 		"@unocss/reset": "^0.48.4",
-		"@upstash/ratelimit": "^0.1.5",
+		"@upstash/ratelimit": "^0.4.0",
 		"@upstash/redis": "^1.19.1",
 		"@vercel/analytics": "^0.1.8",
 		"dotenv": "^16.0.3",
