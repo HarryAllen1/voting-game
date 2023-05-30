@@ -1,12 +1,2 @@
-<script lang="ts">
-	import { enhance } from '$app/forms';
-	import type { ActionData } from './$types';
-
-	// export let form: ActionData;
-</script>
-
-<h1>Voting Game</h1>
-<form method="POST" use:enhance>
-	<input type="text" />
-	<button type="submit" on:click={() => new Audio('/beep.wav').play()}>New Game</button>
-</form>
+<h1>Welcome to SvelteKit</h1>
+<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
