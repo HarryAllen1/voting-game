@@ -1,22 +1,22 @@
-import { Handlers } from "$fresh/server.ts";
-import { deleteCookie, getCookies, setCookie } from "$std/http/cookie.ts";
-import { getAndDeleteOauthSession, setUserWithSession } from "$utils/db.ts";
-import { getAuthenticatedUser } from "$utils/github.ts";
-import { oauth2Client } from "$utils/oauth.ts";
-import { User } from "$utils/types.ts";
+import { Handlers } from '$fresh/server.ts';
+import { deleteCookie, getCookies, setCookie } from '$std/http/cookie.ts';
+import { getAndDeleteOauthSession, setUserWithSession } from '$utils/db.ts';
+import { getAuthenticatedUser } from '$utils/github.ts';
+import { oauth2Client } from '$utils/oauth.ts';
+import { User } from '$utils/types.ts';
 
 export const handler: Handlers = {
   async GET(req) {
     const cookies = getCookies(req.headers);
-    const oauthSessionCookie = cookies["oauth-session"];
+    const oauthSessionCookie = cookies['oauth-session'];
     if (!oauthSessionCookie) {
-      return new Response("Missing oauth session", {
+      return new Response('Missing oauth session cookie', {
         status: 400,
       });
     }
     const oauthSession = await getAndDeleteOauthSession(oauthSessionCookie);
     if (!oauthSession) {
-      return new Response("Missing oauth session", {
+      return new Response('Missing oauth session', {
         status: 400,
       });
     }
@@ -36,17 +36,17 @@ export const handler: Handlers = {
     };
     await setUserWithSession(user, session);
 
-    const resp = new Response("Logged in", {
+    const resp = new Response('Logged in', {
       headers: {
-        Location: "/",
+        Location: '/',
       },
       status: 307,
     });
-    deleteCookie(resp.headers, "oauth-session");
+    deleteCookie(resp.headers, 'oauth-session');
     setCookie(resp.headers, {
-      name: "session",
+      name: 'session',
       value: session,
-      path: "/",
+      path: '/',
       httpOnly: true,
       maxAge: 60 * 60 * 24 * 365,
     });

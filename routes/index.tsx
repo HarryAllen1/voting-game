@@ -1,12 +1,12 @@
-import { Head } from "$fresh/runtime.ts";
-import { HandlerContext, PageProps } from "$fresh/server.ts";
+import { Head } from '$fresh/runtime.ts';
+import { HandlerContext, PageProps } from '$fresh/server.ts';
 import {
   getUserBySession,
   listGamesByPlayer,
   listRecentlySignedInUsers,
-} from "$utils/db.ts";
-import { Game, State, User } from "$utils/types.ts";
-import Counter from "../islands/Counter.tsx";
+} from '$utils/db.ts';
+import { Game, State, User } from '$utils/types.ts';
+import Counter from '../islands/Counter.tsx';
 
 type Data = SignedInData | null;
 
@@ -17,26 +17,30 @@ interface SignedInData {
 }
 
 export async function handler(req: Request, ctx: HandlerContext<Data, State>) {
-  if (!ctx.state.session) return ctx.render(null);
+  const url = new URL(req.url);
+  url.pathname = '/auth/signin';
+
+  if (!ctx.state.session) return Response.redirect(url);
 
   const [user, users] = await Promise.all([
     getUserBySession(ctx.state.session),
     listRecentlySignedInUsers(),
   ]);
-  if (!user) return ctx.render(null);
+  if (!user) return Response.redirect(url);
 
   const games = await listGamesByPlayer(user.id);
 
   return ctx.render({ user, users, games });
 }
 
-export default function Home({ user }: PageProps<Data>) {
+export default function Home({ data }: PageProps<Data>) {
   return (
     <>
       <Head>
         <title>Fresh App</title>
       </Head>
       <div class="p-4 mx-auto max-w-screen-md">
+        {data?.user.name}
         <img
           src="/logo.svg"
           class="w-32 h-32"
