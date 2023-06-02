@@ -1,7 +1,36 @@
 import { Head } from "$fresh/runtime.ts";
+import { HandlerContext, PageProps } from "$fresh/server.ts";
+import {
+  getUserBySession,
+  listGamesByPlayer,
+  listRecentlySignedInUsers,
+} from "$utils/db.ts";
+import { Game, State, User } from "$utils/types.ts";
 import Counter from "../islands/Counter.tsx";
 
-export default function Home() {
+type Data = SignedInData | null;
+
+interface SignedInData {
+  user: User;
+  users: User[];
+  games: Game[];
+}
+
+export async function handler(req: Request, ctx: HandlerContext<Data, State>) {
+  if (!ctx.state.session) return ctx.render(null);
+
+  const [user, users] = await Promise.all([
+    getUserBySession(ctx.state.session),
+    listRecentlySignedInUsers(),
+  ]);
+  if (!user) return ctx.render(null);
+
+  const games = await listGamesByPlayer(user.id);
+
+  return ctx.render({ user, users, games });
+}
+
+export default function Home({ user }: PageProps<Data>) {
   return (
     <>
       <Head>
